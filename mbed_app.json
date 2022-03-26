@@ -1,0 +1,42 @@
+{
+    "config": {
+        "wifi-ssid": {
+            "help": "WiFi SSID",
+            "value": "\"SSID\""
+        },
+        "wifi-password": {
+            "help": "WiFi Password",
+            "value": "\"Password\""
+        },
+        "server-ip-1": {
+            "help": "TCP server IP address 1st value",
+            "value": "#1"
+        },
+        "server-ip-2": {
+            "help": "TCP server IP address 2nd value",
+            "value": "#2"
+        },
+        "server-ip-3": {
+            "help": "TCP server IP address 3rd value",
+            "value": "#3"
+        },
+        "server-ip-4": {
+            "help": "TCP server IP address 4th value",
+            "value": "#4"
+        }
+    },
+      "target_overrides": {
+        "*": {
+            "platform.stdio-baud-rate": 115200,
+            "mbed-trace.enable": false,
+            "mbed-trace.max-level": "TRACE_LEVEL_DEBUG",
+            "cordio.trace-hci-packets": false,
+            "cordio.trace-cordio-wsf-traces": false,
+            "ble.trace-human-readable-enums": false
+        },
+        "DISCO_L475VG_IOT01A": {
+            "target.features_add": ["BLE"],
+            "target.extra_labels_add": ["ST_BLUENRG"]
+        }
+    }
+}
